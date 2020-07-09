@@ -174,7 +174,8 @@ function App() {
                     {values.pets.map((pet, index) => {
                       const inputPetName = `pets.${index}.name`;
                       const selectTypeName = `pets.${index}.type`;
-                      const error = getIn(errors, inputPetName);
+                      const errorPetName = getIn(errors, inputPetName);
+                      const touchedPetName = getIn(touched, inputPetName);
 
                       return (
                         <div key={index}>
@@ -205,7 +206,9 @@ function App() {
                           >
                             Remove
                           </button>
-                          <small className="text-danger">{error}</small>
+                          <small className="text-danger">
+                            {touchedPetName && errorPetName}
+                          </small>
                         </div>
                       );
                     })}
@@ -226,6 +229,7 @@ function App() {
 
             <pre>{JSON.stringify(values, null, 2)}</pre>
             <pre>{JSON.stringify(errors, null, 2)}</pre>
+            <pre>{JSON.stringify(touched, null, 2)}</pre>
           </form>
         )}
       </Formik>
