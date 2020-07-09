@@ -10,6 +10,8 @@ function App() {
           firstName: "",
           lastName: "",
           isTall: "",
+          cookies: [],
+          yogurt: "",
         }}
         onSubmit={(data, { setSubmitting, resetForm }) => {
           /* for async */
@@ -61,6 +63,65 @@ function App() {
                 </label>
               </div>
             </div>
+            <div className="form-group">
+              <div className="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value="cookies 1"
+                  name="cookies"
+                  id="cookies1"
+                />
+                <label className="custom-control-label" htmlFor="cookies1">
+                  Cookies 1
+                </label>
+              </div>
+              <div className="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value="cookies 2"
+                  name="cookies"
+                  id="cookies2"
+                />
+                <label className="custom-control-label" htmlFor="cookies2">
+                  Cookies 2
+                </label>
+              </div>
+            </div>
+            <div className="form-group">
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="yogurt"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value="Yogurt 1"
+                    style={{ marginRight: "0.7rem" }}
+                  />
+                  Yogurt 1
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="yogurt"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value="Yogurt 2"
+                    style={{ marginRight: "0.7rem" }}
+                  />
+                  Yogurt 2
+                </label>
+              </div>
+            </div>
+
             <div className="form-group">
               <button
                 type="submit"
